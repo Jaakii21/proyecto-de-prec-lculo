@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ========== VARIABLES DE TEMA ========== */
+:root {
+    --bg-gradient-start: #050b14;
+    --bg-gradient-mid: #0a111e;
+    --bg-gradient-end: #0d1726;
+    --text-primary: #f3f4f6;
+    --text-secondary: #d1d5db;
+    --header-bg: linear-gradient(90deg, #001e36 0%, #002B49 50%, #001e36 100%);
+    --header-border: #00d2ff;
+    --card-bg: rgba(13, 22, 36, 0.75);
+    --card-border: rgba(0, 210, 255, 0.2);
+    --step-bg: rgba(10, 18, 30, 0.9);
+    --button-bg: linear-gradient(135deg, #002B49 0%, #0056b3 100%);
+    --button-border: rgba(0, 210, 255, 0.5);
+    --sidebar-bg: #070d17;
+    --input-bg: rgba(7, 13, 23, 0.9);
+    --input-border: rgba(0, 210, 255, 0.3);
+    --accent: #00d2ff;
+}
+
+/* Modo Claro */
+[data-theme="light"] {
+    --bg-gradient-start: #f0f4f8;
+    --bg-gradient-mid: #e2e8f0;
+    --bg-gradient-end: #f8fafc;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --header-bg: linear-gradient(90deg, #002B49 0%, #0056b3 50%, #002B49 100%);
+    --header-border: #00d2ff;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --card-border: rgba(0, 86, 179, 0.2);
+    --step-bg: rgba(255, 255, 255, 0.95);
+    --button-bg: linear-gradient(135deg, #0056b3 0%, #00d2ff 100%);
+    --button-border: rgba(0, 86, 179, 0.4);
+    --sidebar-bg: #ffffff;
+    --input-bg: #ffffff;
+    --input-border: rgba(0, 86, 179, 0.3);
+    --accent: #0056b3;
+}
+
+/* Fondo y texto principal con !important para ganar a Streamlit */
+.stApp {
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Forzar color de texto en la mayoría de elementos */
+.stMarkdown, .stMarkdown p, .stMarkdown span, 
+label, .stText, h1, h2, h3, h4, h5, h6,
+.stCaption, .stAlert {
+    color: var(--text-primary) !important;
+}
+
+.block-container {
+    padding-top: 1rem !important;
+}
+
+/* Banner Superior */
+.header-bar-full {
+    width: 100%;
+    background: var(--header-bg);
+    color: white;
+    padding: 16px 25px;
+    border-radius: 14px;
+    border-bottom: 3px solid var(--header-border);
+    border-top: 1px solid rgba(0, 210, 255, 0.3);
+    box-shadow: 0 6px 25px rgba(0, 210, 255, 0.25);
+    margin-bottom: 25px;
+}
+
+/* Tarjetas */
+div.stMarkdown, .glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Cajas de pasos */
+.step-box {
+    background: var(--step-bg);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+}
+
+/* Botones */
+div.stButton > button {
+    background: var(--button-bg);
+    color: #ffffff;
+    border: 1px solid var(--button-border);
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    transition: all 0.3s ease;
+}
+
+div.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--card-border);
+}
+
+/* Inputs */
+.stTextInput input, .stSelectbox div[data-baseweb="select"], .stTextArea textarea {
+    background-color: var(--input-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--input-border) !important;
+    border-radius: 10px !important;
+}
+
+.stTextInput input:focus, .stTextArea textarea:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 12px rgba(0, 210, 255, 0.3) !important;
+}
+
+/* Textos generales en modo claro */
+[data-theme="light"] .stMarkdown, 
+[data-theme="light"] p, 
+[data-theme="light"] span, 
+[data-theme="light"] label {
+    color: var(--text-primary);
+}

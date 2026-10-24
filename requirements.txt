@@ -1,0 +1,6 @@
+streamlit
+sympy
+numpy
+matplotlib
+python-dotenv
+google-genai
